@@ -1,0 +1,9 @@
+[submodule "rime-ice"]
+	path = rime-ice
+	url = git@github.com:iDvel/rime-ice.git
+[submodule "thirdparty"]
+	path = thirdparty
+	url = git@github.com:hchunhui/librime-lua.git
+[submodule "oh-my-rime"]
+	path = oh-my-rime
+	url = git@github.com:Mintimate/oh-my-rime.git

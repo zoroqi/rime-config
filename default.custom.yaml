@@ -1,0 +1,28 @@
+patch:
+  schema_list:
+    - schema: double_pinyin_mspy
+  menu/page_size: 6
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: commit_code
+      Shift_R: commit_code
+      Control_L: noop
+      Control_R: noop
+      # commit_text 提交候选区的文字，然后切换到英文模式。
+      # commit_code 提交已输入的编码（拼音字母），然后切换到英文模式。
+      # inline_ascii  仅 inline_preedit=true 时有效。在输入法的编辑区临时切换到英文，提交后恢复中文。
+      # noop  不执行任何操作。
+      # clear 清除已输入的编码，然后切换到英文模式。
+  switcher/hotkeys:
+    - "Control+F12"
+  punctuator:
+    import_preset: alternative
+  custom_phrase: # 這是一個 table_translator
+    dictionary: ""
+    user_dict: custom_phrase
+    db_class: tabledb
+    enable_sentence: false
+    enable_completion: false
+    initial_quality: 1
+
