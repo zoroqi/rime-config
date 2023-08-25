@@ -24,7 +24,7 @@ end
 
 function task(input, seg)
     if (input == "ttt") then
-        local tdate = "- [ ] [tid::" .. os.date("%Y%m%d-%H%M%S") .. "]  "
+        local tdate = "- [ ] [tid::" .. os.date("%Y%m%d-%H%M%S") .. "] "
         local ttt = Candidate("", seg.start, seg._end, tdate, "")
         ttt.quality = 100
         yield(ttt)
