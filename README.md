@@ -14,6 +14,8 @@
 9. [rime-double-pinyin](https://github.com/rime/rime-double-pinyin/blob/master/double_pinyin_mspy.schema.yaml)
 10. [Rime/鼠须管/小狼毫 在完全中文输入下使用全套西文标点/英文标点](https://hellodk.cn/post/573)
 11. [Rime 別樣設定，使用西文標點、[ ] 鍵換頁](https://gist.github.com/lotem/2334409)
+12. [Rime 输入法中的快捷键 | Verne in GitHub](https://einverne.github.io/post/2021/10/rime-shortcut.html)
+    - 详细的快捷键参数列表
 
 主要的词库和配置参考, 使用 submodel 进行依赖, 根据心情更新.
 - [Mintimate/oh-my-rime](https://github.com/Mintimate/oh-my-rime)
