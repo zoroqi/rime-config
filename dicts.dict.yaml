@@ -3,12 +3,12 @@
 
 ---
 name: dicts
-version: "1"
+version: "2024-02-21"
 import_tables:
-  - cn_dicts/self
+  - my_dicts/cn
   - rime-ice/cn_dicts/base
   - rime-ice/cn_dicts/ext
-  - rime-ice/cn_dicts/others
+  - rime-ice/cn_dicts/41448
   - rime-ice/en_dicts/en
   - rime-ice/en_dicts/en_ext
 ...

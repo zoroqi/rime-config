@@ -54,7 +54,7 @@ engine:
 
 # 自定义短语：custom_phrase.txt
 custom_phrase:
-  dictionary: ""
+  dictionary: "dicts"
   user_dict: custom_phrase
   db_class: stabledb
   enable_completion: false # 补全提示
@@ -101,7 +101,7 @@ speller:
     #- abbrev/^(.).+$/$1/
 
 translator:
-  dictionary: luna_pinyin
+  dictionary: dicts
   prism: double_pinyin_mspy
   preedit_format:
     - xform/([aoe])(\w)/0$2/
