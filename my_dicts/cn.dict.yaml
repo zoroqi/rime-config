@@ -7,9 +7,15 @@
 #
 #
 ---
-name: self
+name: cn
 version: "2023-08-14"
 sort: by_weight
+columns:
+  - text
+  - weight
 ...
 # +_+
-规训	gui xun	1
+规训	1
+弱民	1
+
+一维表	1

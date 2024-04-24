@@ -7,3 +7,6 @@
 [submodule "oh-my-rime"]
 	path = oh-my-rime
 	url = git@github.com:Mintimate/oh-my-rime.git
+[submodule "my_dicts/special"]
+	path = my_dicts/special
+	url = git@github.com:zoroqi/special.git
