@@ -7,9 +7,11 @@ version: "2024-02-21"
 import_tables:
   - my_dicts/cn
   - my_dicts/special/dicts/cn_name
+  - my_dicts/special/dicts/cn_tags
   - rime-ice/cn_dicts/8105
   - rime-ice/cn_dicts/base
   - rime-ice/cn_dicts/ext
   - rime-ice/en_dicts/en
   - rime-ice/en_dicts/en_ext
+  - rime-ice/cn_dicts/41448
 ...
