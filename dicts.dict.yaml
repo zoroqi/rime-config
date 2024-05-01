@@ -6,6 +6,7 @@ name: dicts
 version: "2024-02-21"
 import_tables:
   - my_dicts/cn
+  - my_dicts/manga
   - my_dicts/special/dicts/cn_name
   - my_dicts/special/dicts/cn_tags
   - my_dicts/special/dicts/cn_notes
