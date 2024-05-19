@@ -35,6 +35,7 @@ const line = "%s\t%d\n"
 
 var conf = []config{
 	{"manga.txt",200},
+	{"cn_subway.txt",200},
 	{"special/dicts/cn_name.txt", 300},
 	{"special/dicts/cn_tags.txt", 100},
 	{"special/dicts/cn_notes.txt", 100},
