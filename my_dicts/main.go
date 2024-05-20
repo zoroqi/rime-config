@@ -41,7 +41,27 @@ var conf = []config{
 	{"special/dicts/cn_notes.txt", 100},
 }
 
+var excludeConf = []config{
+	{"../rime-ice/cn_dicts/8105.dict.yaml", 200},
+	{"../rime-ice/cn_dicts/base.dict.yaml", 200},
+	{"../rime-ice/cn_dicts/ext.dict.yaml", 200},
+	{"../rime-ice/en_dicts/en.dict.yaml", 200},
+	{"../rime-ice/en_dicts/en_ext.dict.yaml", 200},
+	{"../rime-ice/cn_dicts/41448.dict.yaml", 200},
+}
+
 func main() {
+	excludeDict := make(map[string]bool)
+	for _, c := range excludeConf {
+		words, err := readDict(c.path)
+		if err != nil {
+			continue
+		}
+		for _, w := range words {
+			excludeDict[w] = true
+		}
+	}
+
 
 	dict := make(map[string]int)
 	for _, c := range conf {
@@ -50,9 +70,12 @@ func main() {
 			continue
 		}
 		for _, w := range words {
-			dict[w] = max(dict[w], c.wight)
+			if !excludeDict[w] {
+				dict[w] = max(dict[w], c.wight)
+			}
 		}
 	}
+
 	// sort
 	// Extract the keys from the map
 	keys := make([]string, 0, len(dict))
