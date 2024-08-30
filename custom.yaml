@@ -9,7 +9,7 @@ patch:
   preset_color_schemes:
     psionics_m:
       name: 幽能改
-      candidate_format: "%c %@ "    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+      candidate_format: "%c %@"    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
       corner_radius: 5                             # 窗口圆角
       inline_preedit: false                        # 输入的编码是否直接写入到输入框中，如果为 false，未上屏的编码就会写在候选框中
       line_spacing: 10                             # 行间距(适用于竖排)

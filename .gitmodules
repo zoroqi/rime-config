@@ -10,3 +10,6 @@
 [submodule "my_dicts/special"]
 	path = my_dicts/special
 	url = git@github.com:zoroqi/special.git
+[submodule "ssnhd_rime"]
+	path = ssnhd_rime
+	url = git@github.com:ssnhd/rime.git
