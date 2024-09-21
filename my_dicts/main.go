@@ -40,10 +40,10 @@ var conf = []config{
 	{"cn_singer.txt", 200},
 	{"cn_sg_computer.txt", 50},
 	{"other_name.txt", 200},
-	{"special/dicts/cn_name.txt", 300},
+	{"special/dicts/cn_name.txt", 10},
 	{"special/dicts/cn_tags.txt", 100},
 	{"special/dicts/cn_notes.txt", 100},
-	{"special/dicts/cn_notes2.txt", 300},
+	{"special/dicts/cn_notes2.txt", 10},
 }
 
 var excludeConf = []config{
