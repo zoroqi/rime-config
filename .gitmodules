@@ -13,3 +13,6 @@
 [submodule "ssnhd_rime"]
 	path = ssnhd_rime
 	url = git@github.com:ssnhd/rime.git
+[submodule "rime-frost"]
+	path = rime-frost
+	url = git@github.com:gaboolic/rime-frost.git
