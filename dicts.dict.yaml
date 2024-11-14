@@ -13,4 +13,7 @@ import_tables:
   - rime-ice/en_dicts/en
   - rime-ice/en_dicts/en_ext
   - rime-ice/cn_dicts/41448
+  - rime-frost/cn_dicts_cell/name
+  - rime-frost/cn_dicts_cell/name2
+  - rime-frost/cn_dicts_cell/place
 ...
