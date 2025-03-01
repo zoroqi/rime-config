@@ -1,10 +1,11 @@
 patch:
-  us_keyboard_layout: true      # 键盘选项：应用美式键盘布局
+  us_keyboard_layout: true        # 键盘选项：应用美式键盘布局
   style:
     font_point: 35
-    label_font_point: 30                         # 候选编号大小
+    label_font_point: 30          # 候选编号大小
     font_face: "InconsolataGo"
-    horizontal: true              # true横排，false竖排
+    candidate_list_layout: linear # stacked | linear 候选词的展示方式, linear 是横向展示
+    # horizontal: true            # true横排，false竖排
     color_scheme: psionics_m      # 配色方案
   preset_color_schemes:
     psionics_m:
