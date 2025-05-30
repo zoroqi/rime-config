@@ -44,19 +44,19 @@ function task(input, seg)
         yield(cand)
     end
 
-    if (input == "tdi") then
-        local task_type = "[finish::discard " .. os.date("%Y-%m-%d %H:%M:%S") .. "]"
-        local cand = Candidate("", seg.start, seg._end, task_type, "tdo")
-        cand.quality=1
-        yield(cand)
-    end
+    -- if (input == "tdi") then
+    --     local task_type = "[finish::discard " .. os.date("%Y-%m-%d %H:%M:%S") .. "]"
+    --     local cand = Candidate("", seg.start, seg._end, task_type, "tdo")
+    --     cand.quality=1
+    --     yield(cand)
+    -- end
 
-    if (input == "tpe") then
-        local task_type = "[finish::pending " .. os.date("%Y-%m-%d %H:%M:%S") .. "]"
-        local cand = Candidate("", seg.start, seg._end, task_type, "")
-        cand.quality=1
-        yield(cand)
-    end
+    -- if (input == "tpe") then
+    --     local task_type = "[finish::pending " .. os.date("%Y-%m-%d %H:%M:%S") .. "]"
+    --     local cand = Candidate("", seg.start, seg._end, task_type, "")
+    --     cand.quality=1
+    --     yield(cand)
+    -- end
 end
 
 function date_translator(input, seg)
@@ -88,6 +88,9 @@ function date_translator(input, seg)
         local cand = Candidate("datetime", seg.start, seg._end, os.date("%Y%m%d-%H%M%S"), "")
         cand.quality = 100
         yield(cand)
+        local cand2 = Candidate("datetime", seg.start, seg._end, os.date("%H:%M:%S"), "")
+        cand2.quality = 101
+        yield(cand2)
     end
 
     if (input == "ssj") then
@@ -100,5 +103,9 @@ function date_translator(input, seg)
     if (input == "rq") then
         --- Candidate(type, start, end, text, comment)
         yield(Candidate("date", seg.start, seg._end, os.date("%Y-%m-%d"), ""))
+
+        local cand = Candidate("datetime", seg.start, seg._end, os.date("%Y-%m-%d %H:%M:%S"), "")
+        cand.quality = 100
+        yield(cand)
     end
 end
