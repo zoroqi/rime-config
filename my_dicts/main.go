@@ -34,13 +34,13 @@ columns:
 const line = "%s\t%d\n"
 
 var conf = []config{
-	{"manga.txt",200},
-	{"cn_subway.txt",200},
+	{"manga.txt", 200},
+	{"cn_subway.txt", 200},
 	{"cn_zh_scholar.txt", 200},
 	{"cn_singer.txt", 200},
 	{"cn_sg_computer.txt", 50},
 	{"other_name.txt", 200},
-    {"cn.txt", 200},
+	{"cn.txt", 200},
 	{"special/dicts/cn_name.txt", 10},
 	{"special/dicts/cn_tags.txt", 100},
 	{"special/dicts/cn_notes.txt", 100},
@@ -54,7 +54,7 @@ var excludeConf = []config{
 	{"../rime-ice/en_dicts/en.dict.yaml", 200},
 	{"../rime-ice/en_dicts/en_ext.dict.yaml", 200},
 	{"../rime-ice/cn_dicts/41448.dict.yaml", 200},
-    {"cn_ming.txt", 200},
+	{"cn_ming.txt", 200},
 }
 
 func main() {
@@ -68,7 +68,6 @@ func main() {
 			excludeDict[w] = true
 		}
 	}
-
 
 	dict := make(map[string]int)
 	for _, c := range conf {
