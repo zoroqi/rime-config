@@ -1,27 +1,3 @@
---- 过滤器：单字在先
-function single_char_first_filter(input)
-    local l = {}
-    for cand in input:iter() do
-        if (utf8.len(cand.text) == 1) then
-            yield(cand)
-        else
-            table.insert(l, cand)
-        end
-    end
-    for i, cand in ipairs(l) do
-        yield(cand)
-    end
-end
-
---- 过滤器：只显示单字
-function single_char_only(input)
-    for cand in input:iter() do
-        if (utf8.len(cand.text) == 1) then
-            yield(cand)
-        end
-    end
-end
-
 function task(input, seg)
     if (input == "ttt") then
         local tdate = "- [ ] [tid::" .. os.date("%Y%m%d-%H%M%S") .. "] "

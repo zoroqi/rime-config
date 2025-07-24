@@ -16,14 +16,18 @@ switches:
   - name: ascii_mode
     reset: 1
     states: [ 中文, 英文 ]
+  - name: traditionalization
+    reset: 0
+    states: [汉字, 漢字]
+  - name: ascii_punct
+    reset: 1
+    states: ["。，", ". ,"]
   - name: full_shape
     reset: 0
     states: [半角, 全角]
-  - name: simplification
-    reset: 1
-    states: [漢字, 汉字]
-  - name: ascii_punct
-    states: ["。，", "．，"]
+#  - name: emoji
+#    states: [ 💀, 😄 ]
+#    reset: 1
 
 engine:
   processors:
@@ -46,10 +50,12 @@ engine:
     - reverse_lookup_translator
     - lua_translator@date_translator             # 时间、日期、星期
     - lua_translator@task                        # GTD 辅助管理
+    - lua_translator@sp_id
     - table_translator@custom_phrase             # 自定义短语
     - script_translator
   filters:
-    - simplifier
+#    - simplifier@emoji
+    - simplifier@traditionalize                     # 简繁切换
     - uniquifier
 
 # 自定义短语：custom_phrase.txt
@@ -142,10 +148,34 @@ translator:
     - xform/([nl])v/$1ü/
 
 punctuator:
-  import_preset: alternative
+  import_preset: symbols
 
 key_binder:
-  import_preset: alternative
+  bindings:
+    # commonly used paging keys
+    - { when: composing, accept: ISO_Left_Tab, send: Page_Up }
+    - { when: composing, accept: Tab, send: Right }
+    - { when: composing, accept: "Shift+Tab", send: Left }
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: paging, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    - { when: paging, accept: bracketleft, send: Page_Up }
+    - { when: has_menu, accept: bracketright, send: Page_Down }
+
+
+# 简繁切换
+traditionalize:
+  option_name: traditionalization  # 对应 switches 中的 name
+  opencc_config: s2t.json          # s2t.json | s2hk.json | s2tw.json | s2twp.json （Rime 内置配置，在程序目录可找到）
+  tips: none                       # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  tags: [ abc, number, gregorian_to_lunar ]  # 限制在对应 tag，不对其他如反查的内容做简繁转换
+
+# Emoji 需要将 rime-ice 中 opencc 目录 copy 到外层目录
+# emoji:
+#   option_name: emoji         # 对应 switches 中的 name
+#   opencc_config: emoji.json  # 选择要加载的 OpenCC 配置
+#   inherit_comment: false     # 在 corrector.lua 及反查中，emoji 的 comment 显示为空
 
 recognizer:
   patterns:  # 一些常见的英文组合，当正则匹配到这些时，都不会生成候选词，而只输入英文
