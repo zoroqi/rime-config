@@ -71,17 +71,19 @@ function date_translator(input, seg)
 
     if (input == "ssj") then
         local cand = Candidate("datetime", seg.start, seg._end, os.date("%y%m%d-%H%M"), "")
-        cand.quality = 100
+        cand.quality = 1
         yield(cand)
     end
 
     -- 输入日期
     if (input == "rq") then
         --- Candidate(type, start, end, text, comment)
-        yield(Candidate("date", seg.start, seg._end, os.date("%Y-%m-%d"), ""))
+        local cand1 = Candidate("date", seg.start, seg._end, os.date("%Y-%m-%d"), "")
+        cand1.quality = 200
+        yield(cand1)
 
-        local cand = Candidate("datetime", seg.start, seg._end, os.date("%Y-%m-%d %H:%M:%S"), "")
-        cand.quality = 100
-        yield(cand)
+        local cand2 = Candidate("datetime", seg.start, seg._end, os.date("%Y-%m-%d %H:%M:%S"), "")
+        cand2.quality = 200
+        yield(cand2)
     end
 end

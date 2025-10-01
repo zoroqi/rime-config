@@ -17,7 +17,7 @@ switches:
     reset: 1
     states: [ 中文, 英文 ]
   - name: traditionalization
-    reset: 0
+    reset: 1
     states: [汉字, 漢字]
   - name: ascii_punct
     reset: 1
