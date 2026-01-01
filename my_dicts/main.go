@@ -54,6 +54,10 @@ var excludeConf = []config{
 	{"../rime-ice/en_dicts/en.dict.yaml", 200},
 	{"../rime-ice/en_dicts/en_ext.dict.yaml", 200},
 	{"../rime-ice/cn_dicts/41448.dict.yaml", 200},
+	{"../rime-frost/cn_dicts_cell/name.yaml", 200},
+	{"../rime-frost/cn_dicts_cell/name2.yaml", 200},
+	{"../rime-frost/cn_dicts_cell/place.yaml", 200},
+
 	{"cn_ming.txt", 200},
 }
 
